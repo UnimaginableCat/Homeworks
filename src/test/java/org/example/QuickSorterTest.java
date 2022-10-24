@@ -32,5 +32,7 @@ class QuickSorterTest {
     Assertions.assertEquals(5, linkedList.get(3));
     Assertions.assertEquals(9, linkedList.get(4));
     Assertions.assertEquals(12, linkedList.get(5));
+
+
   }
 }
