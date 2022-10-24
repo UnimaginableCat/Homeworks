@@ -16,11 +16,11 @@ class LinkedListRealizationTest {
   @Test
   void add() {
     fillLinkedListWithIntegers();
-    Assertions.assertEquals(linkedList.size(), 3);
+    Assertions.assertEquals(3, linkedList.size());
 
-    Assertions.assertEquals(linkedList.get(0), 1);
-    Assertions.assertEquals(linkedList.get(1), 2);
-    Assertions.assertEquals(linkedList.get(2), 3);
+    Assertions.assertEquals(1, linkedList.get(0));
+    Assertions.assertEquals(2, linkedList.get(1));
+    Assertions.assertEquals(3, linkedList.get(2));
 
   }
   void fillLinkedListWithIntegers(){
@@ -50,7 +50,7 @@ class LinkedListRealizationTest {
   @Test
   void size() {
     fillLinkedListWithIntegers();
-    Assertions.assertEquals(linkedList.size(), 3);
+    Assertions.assertEquals(3, linkedList.size());
 
   }
 
@@ -73,9 +73,9 @@ class LinkedListRealizationTest {
   void iterator() {
     fillLinkedListWithIntegers();
     Iterator<Integer> iterator = linkedList.iterator();
-    Assertions.assertEquals(iterator.next(), 1);
-    Assertions.assertEquals(iterator.next(), 2);
-    Assertions.assertEquals(iterator.next(), 3);
+    Assertions.assertEquals(1, iterator.next());
+    Assertions.assertEquals(2, iterator.next());
+    Assertions.assertEquals(3, iterator.next());
     assertFalse(iterator.hasNext());
 
   }
@@ -84,9 +84,9 @@ class LinkedListRealizationTest {
   void toArray() {
     fillLinkedListWithIntegers();
     Object[] array = linkedList.toArray();
-    Assertions.assertEquals(array[0], 1);
-    Assertions.assertEquals(array[1], 2);
-    Assertions.assertEquals(array[2], 3);
+    Assertions.assertEquals(1, array[0]);
+    Assertions.assertEquals(2, array[1]);
+    Assertions.assertEquals(3, array[2]);
 
   }
 
@@ -95,17 +95,17 @@ class LinkedListRealizationTest {
   void remove() { // removing by index
     fillLinkedListWithIntegers();
     linkedList.remove(0);
-    Assertions.assertEquals(linkedList.get(0), 2);
-    Assertions.assertEquals(linkedList.get(1), 3);
+    Assertions.assertEquals(2, linkedList.get(0));
+    Assertions.assertEquals(3, linkedList.get(1));
     linkedList.remove(0);
-    Assertions.assertEquals(linkedList.get(0), 3);
+    Assertions.assertEquals(3, linkedList.get(0));
 
   }
   @Test
   void removeObject() { // removing object
     fillLinkedListWithStrings();
     linkedListString.remove("First string");
-    Assertions.assertEquals(linkedListString.get(0), "Second string");
+    Assertions.assertEquals("Second string", linkedListString.get(0));
     assertFalse(linkedListString.remove("No such string"));
   }
 
@@ -115,23 +115,23 @@ class LinkedListRealizationTest {
     arrayList.add(1);
     arrayList.add(2);
     linkedList.addAll(arrayList);
-    Assertions.assertEquals(linkedList.get(0), 1);
-    Assertions.assertEquals(linkedList.get(1), 2);
+    Assertions.assertEquals(1, linkedList.get(0));
+    Assertions.assertEquals(2, linkedList.get(1));
 
   }
 
   @Test
-  void AddAllWithIndex() {
+  void addAllWithIndex() {
     fillLinkedListWithIntegers();
     ArrayList<Integer> arrayList = new ArrayList<>();
     arrayList.add(9);
     arrayList.add(10);
     linkedList.addAll(1, arrayList);
-    Assertions.assertEquals(linkedList.get(0), 1);
-    Assertions.assertEquals(linkedList.get(1), 9);
-    Assertions.assertEquals(linkedList.get(2), 10);
-    Assertions.assertEquals(linkedList.get(3), 2);
-    Assertions.assertEquals(linkedList.get(4), 3);
+    Assertions.assertEquals(1, linkedList.get(0));
+    Assertions.assertEquals(9, linkedList.get(1));
+    Assertions.assertEquals(10,linkedList.get(2));
+    Assertions.assertEquals(2, linkedList.get(3));
+    Assertions.assertEquals(3, linkedList.get(4));
 
 
   }
@@ -139,9 +139,9 @@ class LinkedListRealizationTest {
   @Test
   void clear() {
     fillLinkedListWithIntegers();
-    Assertions.assertEquals(linkedList.size(), 3);
+    Assertions.assertEquals(3, linkedList.size());
     linkedList.clear();
-    Assertions.assertEquals(linkedList.size(), 0);
+    Assertions.assertEquals(0, linkedList.size());
 
   }
 
@@ -149,7 +149,7 @@ class LinkedListRealizationTest {
   void get() {
     fillLinkedListWithIntegers();
     Integer value = linkedList.get(0);
-    Assertions.assertEquals(value, 1);
+    Assertions.assertEquals(1, value);
 
   }
 
@@ -157,25 +157,25 @@ class LinkedListRealizationTest {
   void set() {
     fillLinkedListWithIntegers();
     linkedList.set(0,5);
-    Assertions.assertEquals(linkedList.get(0), 5);
+    Assertions.assertEquals(5, linkedList.get(0));
 
   }
 
   @Test
   void indexOf() {
     fillLinkedListWithStrings();
-    Assertions.assertEquals(linkedListString.indexOf("Second string"), 1);
-    Assertions.assertEquals(linkedListString.indexOf("Third string"), 2);
-    Assertions.assertEquals(linkedListString.indexOf("No string"), -1);
+    Assertions.assertEquals(1, linkedListString.indexOf("Second string"));
+    Assertions.assertEquals(2, linkedListString.indexOf("Third string"));
+    Assertions.assertEquals(-1, linkedListString.indexOf("No string"));
 
   }
 
   @Test
   void lastIndexOf() {
     fillLinkedListWithRepeatedStrings();
-    Assertions.assertEquals(linkedListString.lastIndexOf("Third string"), 5);
-    Assertions.assertEquals(linkedListString.lastIndexOf("Second string"), 4);
-    Assertions.assertEquals(linkedListString.lastIndexOf("No string"), -1);
+    Assertions.assertEquals(5, linkedListString.lastIndexOf("Third string"));
+    Assertions.assertEquals(4,linkedListString.lastIndexOf("Second string"));
+    Assertions.assertEquals(-1, linkedListString.lastIndexOf("No string"));
 
   }
 
@@ -184,9 +184,9 @@ class LinkedListRealizationTest {
   void subList() {
     fillLinkedListWithRepeatedStrings();
     List<String> list = linkedListString.subList(2,5);
-    Assertions.assertEquals(list.size(), 4);
-    Assertions.assertEquals(list.get(0), "Third string");
-    Assertions.assertEquals(list.get(1), "Second string");
+    Assertions.assertEquals(4, list.size());
+    Assertions.assertEquals( "Third string", list.get(0));
+    Assertions.assertEquals( "Second string", list.get(1));
 
   }
 }
