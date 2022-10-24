@@ -50,5 +50,4 @@ public class QuickSorter<T> {
       array.set(endIndex, temp);
     }
   }
-
 }

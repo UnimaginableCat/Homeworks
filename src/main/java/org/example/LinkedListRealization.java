@@ -269,23 +269,6 @@ public class LinkedListRealization<T> implements List<T> {
     }
   }
 
-//  /**
-//   * Method that copies values from index to end of this list
-//   *
-//   * @param index Index of element to start copying
-//   * @return ArrayList of elements
-//   */
-//  private ArrayList<T> getElementsFromIndex(int index) {
-//    Node<T> node = getNode(index);
-//    ArrayList<T> arrayList = new ArrayList<>();
-//    arrayList.add(node.getValue());
-//    while (node.nextNode != null) {
-//      node = node.nextNode;
-//      arrayList.add(node.getValue());
-//    }
-//    return arrayList;
-//  }
-
   @Override
   public void add(int index, T element) {
     if (checkIndex(index)) {
@@ -346,10 +329,7 @@ public class LinkedListRealization<T> implements List<T> {
 
   @Override
   public List<T> subList(int from, int to) {
-    if (from < 0) {
-      throw new IndexOutOfBoundsException();
-    }
-    if (to > size()) {
+    if (from < 0 || to > size() ) {
       throw new IndexOutOfBoundsException();
     }
     if (from > to) {
